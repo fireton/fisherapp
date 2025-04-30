@@ -1,0 +1,27 @@
+# Build results
+bin/
+obj/
+*.exe
+*.dll
+*.pdb
+
+# User-specific files
+*.user
+*.suo
+*.sln.docstates
+
+# Rider / VS Code / VS junk
+.idea/
+.vscode/
+*.code-workspace
+
+# Test results
+TestResults/
+
+# Local secrets and settings
+appsettings.Development.json
+appsettings.Local.json
+secrets.json
+
+# Static output from Angular
+wwwroot/
