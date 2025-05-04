@@ -1,0 +1,8 @@
+<div class="mb-4">
+    <div id="map" class="rounded-xl overflow-hidden shadow" style="height: 500px; width: 100%;"></div>
+  </div>
+  
+
+<div *ngIf="weatherJson" class="bg-gray-100 p-4 rounded-xl text-sm font-mono whitespace-pre-wrap max-h-[300px] overflow-auto">
+    {{ weatherJson }}
+</div>
