@@ -27,11 +27,18 @@ export class MapPickerComponent implements AfterViewInit {
     
     L.Marker.prototype.options.icon = defaultIcon;
 
-    this.map = L.map('map').setView([47.0, 28.8], 7); // Центр Молдовы
-
+    this.map = L.map('map', {
+      attributionControl: false
+    }).setView([47.0, 28.8], 7);
+    
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; OpenStreetMap contributors',
+      // без attribution здесь, зададим ниже вручную
     }).addTo(this.map);
+    
+    L.control
+      .attribution({ prefix: false }) // отключает "Leaflet"
+      .addTo(this.map)
+      .addAttribution('© OpenStreetMap contributors');
 
     this.map.on('click', (e: L.LeafletMouseEvent) => {
       const { lat, lng } = e.latlng;
